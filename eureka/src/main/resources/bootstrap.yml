@@ -1,0 +1,33 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: eureka-center
+
+
+eureka:
+  client:
+    # 是否从eureka获取注册信息 默认true 单节点关闭
+    fetch-registry: false
+    # 是否将自己注册到eureka 默认true 单节点不需要注册
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://localhost:${server.port}/eureka/
+  instance:
+    # 心跳间隔
+    lease-renewal-interval-in-seconds: 10
+    # 到期持续时间
+    lease-expiration-duration-in-seconds: 30
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  server:
+    # 关闭自我保护模式
+    enable-self-preservation: false
+    # 剔除关闭的服务的间隔
+    eviction-interval-timer-in-ms: 3000
+
+logging:
+  level:
+    roo: info
+    com.ronin.eureka: debug

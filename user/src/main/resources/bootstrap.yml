@@ -1,0 +1,39 @@
+server:
+  port: 9004
+
+spring:
+  application:
+    name: user-center233
+  datasource:
+    url: jdbc:mysql://localhost:3306/lm_ad_admin?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+    username: root
+    password: 123456
+#  redis:
+#    host: localhost
+#    port: 6379
+#    password:
+#    timeout: 5s
+#    lettuce:
+#      pool:
+#        min-idle: 0
+#        max-idle: 8
+#        max-active: 8
+#        max-wait: -1ms
+
+mybatis:
+  mapper-locations: mappers/*.xml
+
+eureka:
+  client:
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+  instance:
+    lease-expiration-duration-in-seconds: 15
+    lease-renewal-interval-in-seconds: 5
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+logging:
+  level:
+    roo: info
+    com.ronin.user: debug
