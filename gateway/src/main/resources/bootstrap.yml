@@ -14,4 +14,11 @@ eureka:
     lease-renewal-interval-in-seconds: 5
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
-
+zuul:
+  semaphore:
+    max-semaphores: 500
+  ignored-services: '*'
+  sensitiveHeaders:
+  routes:
+    oauth-server233: /api-o/**
+    user-center233: /api-u/**

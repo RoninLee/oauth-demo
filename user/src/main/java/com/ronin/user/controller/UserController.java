@@ -46,7 +46,7 @@ public class UserController {
         loginAppUser.setPosition("");
         loginAppUser.setCompanyPhone("");
         loginAppUser.setLoginType("USERNAME");
-        loginAppUser.setId(0L);
+        loginAppUser.setId(233L);
         loginAppUser.setUsername("lisi");
         loginAppUser.setPassword("$2a$10$ew5diqp0CliQ4F6JyZ2iEOOFpVSKSzsLfCdZYnd30DzypDBIHewKW");
         loginAppUser.setHeadImgUrl("");

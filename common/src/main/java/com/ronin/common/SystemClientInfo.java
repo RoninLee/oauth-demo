@@ -7,7 +7,7 @@ package com.ronin.common;
  */
 public interface SystemClientInfo {
 
-    String CLIENT_ID = "system";
-    String CLIENT_SECRET = "system";
-    String CLIENT_SCOPE = "app";
+    String CLIENT_ID = "PC_ADMIN";
+    String CLIENT_SECRET = "secret";
+    String CLIENT_SCOPE = "all";
 }
